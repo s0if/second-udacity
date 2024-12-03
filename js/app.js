@@ -1,8 +1,67 @@
+/**
+ *
+ * Manipulating the DOM exercise.
+ * Exercise programmatically builds navigation,
+ * scrolls to anchors from navigation,
+ * and highlights section in viewport upon scrolling.
+ *
+ * Dependencies: None
+ *
+ * JS Version: ES2015/ES6
+ *
+ * JS Standard: ESlint
+ *
+ */
+
+/**
+ * Comments should be present at the beginning of each procedure and class.
+ * Great to have comments before crucial code sections within the procedure.
+ */
+
+/**
+ * Define Global Variables
+ *
+ */
+
+/**
+ * End Global Variables
+ * Start Helper Functions
+ *
+ */
+
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ *
+ */
+
+// build the nav
+
+// Add class 'active' to section when near top of viewport
+
+// Scroll to anchor ID using scrollTO event
+
+/**
+ * End Main Functions
+ * Begin Events
+ *
+ */
+
+// Build menu
+
+// Scroll to section on link click
+
+// Set sections as active
+
+// Select main elements
 const navbarMenu = document.querySelector(".navbar__menu");
 const mainSections = document.querySelectorAll("section");
-const buildNav = () => {
+
+// Function to create the navigation menu
+const buildNav=()=> {
   const navList = document.createElement("ul");
   navList.classList.add("navbar__list");
+
   mainSections.forEach((section) => {
     const navItem = document.createElement("li");
     const anchor = document.createElement("a");
@@ -18,8 +77,10 @@ const buildNav = () => {
   });
 
   navbarMenu.appendChild(navList);
-};
-const setActiveSection = () => {
+}
+
+// Function to set the active section and nav link
+const setActiveSection=()=> {
   mainSections.forEach((section) => {
     const rect = section.getBoundingClientRect();
     const link = document.querySelector(`a[href="#${section.id}"]`);
@@ -31,8 +92,10 @@ const setActiveSection = () => {
       link.classList.remove("active-link");
     }
   });
-};
-const makeNavbarResponsive = () => {
+}
+
+// Add responsiveness
+const makeNavbarResponsive=()=> {
   const burgerMenu = document.createElement("div");
   burgerMenu.classList.add("burger-menu");
   burgerMenu.innerHTML = "<span></span><span></span><span></span>";
@@ -41,8 +104,11 @@ const makeNavbarResponsive = () => {
     const navList = document.querySelector(".navbar__list");
     navList.classList.toggle("responsive");
   });
+
   navbarMenu.insertBefore(burgerMenu, navbarMenu.firstChild);
-};
+}
+
+// Initialize the page
 document.addEventListener("DOMContentLoaded", () => {
   buildNav();
   makeNavbarResponsive();

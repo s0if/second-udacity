@@ -40,9 +40,10 @@
 .menu__link:hover,
 .menu__link.active-link {
     background-color: #555;
-    border-radius: 1rem;
+    border-radius: 5px;
 }
 
+/* Burger Menu */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -56,6 +57,7 @@
     margin: 4px 0;
 }
 
+/* Responsive Layout */
 @media (max-width: 768px) {
     .burger-menu {
         display: flex;
@@ -70,6 +72,7 @@
     }
 }
 
+
 /* ---- Base Rules ---- */
 body {
     background: rgb(136, 203, 171);
@@ -79,6 +82,7 @@ body {
     font-family: 'Merriweather', serif;
     color: #fff;
 }
+
 
 /* Typeography General*/
 h1 {
